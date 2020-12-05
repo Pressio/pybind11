@@ -903,12 +903,12 @@ public:
     }
 
     template<typename... Ix>
-    const T& operator[](Ix... index) const
+    const T& operator()(Ix... index) const
     {
       return *(static_cast<T*>(array::mutable_data()) + byte_offset(ssize_t(index)...) / itemsize());
     }
     template<typename... Ix>
-    T& operator[](Ix... index)
+    T& operator()(Ix... index)
     {
       return *(static_cast<T*>(array::mutable_data()) + byte_offset(ssize_t(index)...) / itemsize());
     }
