@@ -905,7 +905,7 @@ public:
     template<typename... Ix>
     const T& operator()(Ix... index) const
     {
-      return *(static_cast<T*>(array::mutable_data()) + byte_offset(ssize_t(index)...) / itemsize());
+      return *(static_cast<const T*>(array::data()) + byte_offset(ssize_t(index)...) / itemsize());
     }
     template<typename... Ix>
     T& operator()(Ix... index)
